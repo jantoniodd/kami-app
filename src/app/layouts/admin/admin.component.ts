@@ -1,5 +1,5 @@
-import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { CualquierCosa } from 'src/app/shared/services/cualquier-cosa';
 
 @Component({
   templateUrl: './admin.component.html',
@@ -12,24 +12,16 @@ export class AdminComponent implements OnInit {
 
   omenus: Array<{ link: string; nombre: string }> = [
     {
-      link: '/candidatos',
-      nombre: 'Candidatos',
-    },
-    {
-      link: '/trabajadores',
-      nombre: 'Trabajadores',
-    },
-    {
-      link: '/areas',
-      nombre: 'Areas',
+      link: '/postulantes',
+      nombre: 'Postulantes',
     },
   ];
 
-  constructor(private breakpointObserver: BreakpointObserver) {
-    this.breakpointObserver.observe(['(max-width: 800px)']).subscribe((res) => {
-      this.opened = !res.matches;
+  constructor(private abz: CualquierCosa) {
+    abz.movil$.subscribe((m) => {
+      this.opened = !m;
 
-      if (res.matches) {
+      if (m) {
         this.isToolbar = true;
         this.mode = 'over';
       } else {

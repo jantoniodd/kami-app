@@ -1,5 +1,4 @@
-<mat-toolbar color="primary" *ngIf="!isToolbar">
-
+<mat-toolbar color="warn" *ngIf="!isToolbar">
     <button (click)="nav.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
         <mat-icon>menu</mat-icon>
     </button>
@@ -10,19 +9,32 @@
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
         <mat-icon>logout</mat-icon>
     </button>
-
 </mat-toolbar>
 
 <mat-sidenav-container>
+    <mat-sidenav #nav [mode]="mode" [opened]="opened">
 
-    <mat-sidenav #nav class="mat-elevation-z8" [mode]="mode" [opened]="opened">
+        <div class="profile-sidebar">
+
+            <div class="text-center">
+                <a href="">
+                    <img src="https://cdn2.iconfinder.com/data/icons/avatars-99/62/avatar-370-456322-512.png"
+                        class="img-fluid rounded-circle mb-3" width="80" height="80" alt="">
+                </a>
+                <h6 class="mb-0">José Díaz</h6>
+                <span>Trujillo, PE</span>
+            </div>
+
+        </div>
+
         <mat-nav-list>
-            <a mat-list-item [routerLink]="m.link" *ngFor="let m of omenus"> {{ m.nombre }} </a>
+            <a mat-list-item [routerLink]="m.link" *ngFor="let m of omenus">
+                {{ m.nombre }}
+            </a>
         </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
-
         <mat-toolbar color="warn" *ngIf="isToolbar">
             <button (click)="nav.toggle()" mat-icon-button class="example-icon"
                 aria-label="Example icon-button with menu icon">
@@ -35,10 +47,8 @@
             </button>
         </mat-toolbar>
 
-        <div class="content mat-elevation-z8">
-            Main content here!
+        <div class="content">
+            <router-outlet></router-outlet>
         </div>
-
     </mat-sidenav-content>
-
 </mat-sidenav-container>

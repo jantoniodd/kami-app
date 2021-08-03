@@ -1,0 +1,22 @@
+.container__page {
+  display: grid;
+  width: 100%;
+  grid-template-areas: "menu" "main";
+  column-gap: 0.5rem;
+
+  .container_page_1 {
+    grid-area: main;
+  }
+
+  .container_page_2 {
+    grid-area: menu;
+  }
+}
+
+@media (min-width: 800px) {
+  .container__page {
+    grid-template-columns: 1fr 16.875rem;
+    grid-template-areas: "main menu";
+    row-gap: 0.5rem;
+  }
+}

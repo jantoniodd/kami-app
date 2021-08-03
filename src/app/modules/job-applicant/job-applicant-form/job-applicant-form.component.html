@@ -1,0 +1,147 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title> Registrar postulante </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="form">
+            <mat-stepper [orientation]="orientacion" linear>
+                <mat-step [stepControl]="form.get('formOne')">
+                    <form formGroupName="formOne">
+                        <ng-template matStepLabel>Datos personales</ng-template>
+
+                        <div class="row">
+                            <div class="col-6 col-sm-3">
+                                <dd-select formControlName="documento" [items]="tiposDocumento | async"
+                                    label="Tipo Documento" required="true">
+                                </dd-select>
+                            </div>
+                            <div class="col-6 col-sm-3">
+                                <dd-input formControlName="numero" (input)="_keyUp($event)" label="Número Documento"
+                                    required="true"></dd-input>
+                            </div>
+                        </div>
+
+                        <dd-input formControlName="nombres" label="Nombres" required="true"></dd-input>
+
+                        <div class="row">
+                            <div class="col">
+                                <dd-input formControlName="apePaterno" label="Apellido Paterno" required="true">
+                                </dd-input>
+                            </div>
+                            <div class="col">
+                                <dd-input formControlName="apeMaterno" label="Apellido Materno" required="true">
+                                </dd-input>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <mat-form-field style="display: block">
+                                    <mat-label>Fecha Nacimiento</mat-label>
+                                    <input matInput [max]="date" [matDatepicker]="fcNacido"
+                                        formControlName="fcNacimiento" required="true" />
+                                    <mat-datepicker-toggle matSuffix [for]="fcNacido"></mat-datepicker-toggle>
+                                    <mat-datepicker #fcNacido></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+
+                            <div class="col">
+                                <dd-select formControlName="sexo" [items]="sexos | async" label="Sexo" required="true">
+                                </dd-select>
+                            </div>
+
+                            <div class="col">
+                                <dd-select formControlName="estadoCivil" [items]="estadosCivil | async"
+                                    label="Estado Civil" required="true">
+                                </dd-select>
+                            </div>
+                        </div>
+
+                        <button type="button" mat-stroked-button matStepperNext>
+                            Siguiente
+                        </button>
+                    </form>
+                </mat-step>
+
+                <mat-step [stepControl]="form.get('formTwo')">
+                    <form formGroupName="formTwo">
+                        <ng-template matStepLabel>Datos Contacto</ng-template>
+
+                        <dd-ubigeo formControlName="ubigeo"></dd-ubigeo>
+
+                        <dd-input formControlName="direccion" label="Dirección" required="true"></dd-input>
+
+                        <div class="row">
+                            <div class="col">
+                                <dd-input formControlName="telefono" label="Teléfono"></dd-input>
+                            </div>
+                            <div class="col">
+                                <dd-input formControlName="celular" label="Celular"></dd-input>
+                            </div>
+                            <div class="col">
+                                <dd-input formControlName="correo" label="Correo" type="email"></dd-input>
+                            </div>
+                        </div>
+
+                        <button type="button" mat-stroked-button matStepperPrevious>
+                            Atras
+                        </button>
+                        <button type="button" mat-stroked-button matStepperNext>
+                            Siguiente
+                        </button>
+                    </form>
+                </mat-step>
+
+                <mat-step>
+                    <form formGroupName="formThree">
+                        <ng-template matStepLabel>Datos Educativos</ng-template>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <mat-form-field style="display: block">
+                                    <mat-label>Universidad/instituto</mat-label>
+                                    <input type="text" matInput [matAutocomplete]="auto"
+                                        formControlName="institucionEdu" />
+                                    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                                        <mat-option *ngFor="let option of institucionEducativas | async"
+                                            [value]="option">
+                                            {{ option.nombre }}
+                                        </mat-option>
+                                    </mat-autocomplete>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <button type="button" mat-stroked-button matStepperPrevious>
+                            Atras
+                        </button>
+                        <button type="button" mat-stroked-button color="primary" (click)="onSubmit()">
+                            Guardar
+                        </button>
+                    </form>
+                </mat-step>
+            </mat-stepper>
+        </form>
+
+        <!-- 
+        <div class="row">
+            <div class="col">
+                <code>
+          <pre>{{ form.get("formOne").value | json }}</pre>
+        </code>
+            </div>
+            <div class="col">
+                <code>
+          <pre>{{ form.get("formTwo").value | json }}</pre>
+        </code>
+            </div>
+            <div class="col">
+                <code>
+          <pre>{{ form.get("formThree").value | json }}</pre>
+        </code>
+            </div>
+        </div>
+        -->
+
+    </mat-card-content>
+</mat-card>

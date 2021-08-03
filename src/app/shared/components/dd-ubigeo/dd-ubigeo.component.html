@@ -1,0 +1,26 @@
+<div [formGroup]="form" class="row">
+  <dd-select
+    class="col"
+    formControlName="departamento"
+    [items]="departamentos | async"
+    label="Departamento"
+    required="true"
+  >
+  </dd-select>
+
+  <dd-select
+    class="col"
+    formControlName="provincia"
+    [items]="provincias | async"
+    label="Provincia"
+    required="true"
+  ></dd-select>
+
+  <dd-select
+    class="col"
+    formControlName="distrito"
+    [items]="distritos | async"
+    label="Distrito"
+    required="true"
+  ></dd-select>
+</div>

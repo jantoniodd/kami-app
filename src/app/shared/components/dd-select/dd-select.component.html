@@ -1,0 +1,9 @@
+<mat-form-field style="width: 100%">
+  <mat-label style="font-size: .75rem;">{{ label }}</mat-label>
+  <mat-select class="class-select" [formControl]="mySelect" (selectionChange)="selectValue = $event.value"
+    [compareWith]="compareWith" [required]="required">
+    <mat-option *ngFor="let option of options" [value]="option">
+      {{ option.nombre }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
