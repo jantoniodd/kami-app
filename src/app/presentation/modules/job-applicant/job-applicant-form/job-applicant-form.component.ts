@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { of } from 'rxjs';
-import { CualquierCosa } from 'src/app/shared/services/cualquier-cosa';
 import { JobApplicantService } from '../job-applicant.service';
 
 import * as _moment from 'moment';
@@ -10,7 +9,8 @@ import {
   FORM_DATOS_EDUCACION,
   FORM_DATOS_PERSONALES,
 } from './job-applicant-form';
-import { NotificadorService } from 'src/app/shared/services/notificador.service';
+import { CualquierCosa } from 'src/app/data/services/cualquier-cosa';
+import { NotificadorService } from 'src/app/data/services/notificador.service';
 const moment = _moment;
 
 @Component({

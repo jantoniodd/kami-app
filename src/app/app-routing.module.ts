@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AdminComponent } from './layouts/admin/admin.component';
-import { AuthComponent } from './layouts/auth/auth.component';
-import { JobApplicantModule } from './modules/job-applicant/job-applicant.module';
+import { AuthComponent } from './presentation/layouts/auth/auth.component';
+import { AdminComponent } from './presentation/layouts/admin/admin.component';
+import { JobApplicantModule } from './presentation/modules/job-applicant/job-applicant.module';
 
 const routes: Routes = [
   {
@@ -12,15 +12,15 @@ const routes: Routes = [
       {
         path: 'postulantes',
         loadChildren: () =>
-          import('./modules/job-applicant/job-applicant.module').then(
+          import('./presentation/modules/job-applicant/job-applicant.module').then(
             (m) => JobApplicantModule
           ),
       },
     ],
   },
   {
-    path:'login',
-    component : AuthComponent
+    path: 'login',
+    component: AuthComponent
   }
 ];
 
@@ -28,4 +28,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

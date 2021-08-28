@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CualquierCosa } from 'src/app/shared/services/cualquier-cosa';
+import { CualquierCosa } from '../../../data/services/cualquier-cosa';
 
 @Component({
   templateUrl: './admin.component.html',

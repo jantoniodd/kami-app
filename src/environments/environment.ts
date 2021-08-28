@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  REST_CORE: 'api/v1/',
+  REST_CORE: 'https://kami-personal.herokuapp.com/api/v1/',
 };
 
 /*

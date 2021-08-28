@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
-import { SharedModule } from 'src/app/shared/shared.module';
 
 import { JobApplicantRoutingModule } from './job-applicant-routing.module';
 import { JobApplicantComponent } from './job-applicant.component';
-import { JobApplicantFormComponent } from './job-applicant-form/job-applicant-form.component';
 import { JobApplicantListComponent } from './job-applicant-list/job-applicant-list.component';
 import { JobApplicantService } from './job-applicant.service';
+import { SharedModule } from '../../shared/shared.module';
+import { JobApplicantFormComponent } from './job-applicant-form/job-applicant-form.component';
 
 
 @NgModule({
   declarations: [
     JobApplicantComponent,
-    JobApplicantFormComponent,
-    JobApplicantListComponent
+    JobApplicantListComponent,
+    JobApplicantFormComponent
   ],
   imports: [
     SharedModule,

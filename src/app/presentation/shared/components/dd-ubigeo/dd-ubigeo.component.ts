@@ -2,7 +2,7 @@ import { Component, forwardRef } from '@angular/core';
 import { ControlValueAccessor, FormBuilder, FormGroup, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { EMPTY, of } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
-import { JobApplicantService } from 'src/app/modules/job-applicant/job-applicant.service';
+import { JobApplicantService } from 'src/app/presentation/modules/job-applicant/job-applicant.service';
 
 @Component({
   selector: 'dd-ubigeo',
