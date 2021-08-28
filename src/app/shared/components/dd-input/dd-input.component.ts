@@ -20,6 +20,8 @@ export class DdInputComponent implements ControlValueAccessor {
   @Input() type: string = 'text';
   @Input() required: boolean = false
 
+  @Input() icono = "";
+
   private _innerValue: string;
 
   _onTouchedCallback = () => { };

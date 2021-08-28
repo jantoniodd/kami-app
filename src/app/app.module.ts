@@ -7,9 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { AdminComponent } from './layouts/admin/admin.component';
 import { CoreModule } from './core/core.module';
+import { AuthComponent } from './layouts/auth/auth.component';
 
 @NgModule({
-  declarations: [AppComponent, AdminComponent],
+  declarations: [AppComponent, AdminComponent, AuthComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

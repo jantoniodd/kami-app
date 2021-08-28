@@ -57,7 +57,6 @@ export class HttpService {
   }
 
   get(endPoint: string): Observable<any> {
-    console.log(endPoint);
     return this.httpClient.get(endPoint, this.createOptions()).pipe(
       map((response) => this.extractData(response)),
       catchError((error) => this.handleError(error))
@@ -66,33 +65,26 @@ export class HttpService {
 
   post(endPoint: string, body?: object): Observable<any> {
     return this.httpClient.post(endPoint, body, this.createOptions()).pipe(
-      map((response) => {
-        this.extractData(response);
-      }),
+      map((response) => this.extractData(response)),
       catchError((error) => this.handleError(error))
     );
   }
 
   put(endPoint: string, body?: object): Observable<any> {
     return this.httpClient.put(endPoint, body, this.createOptions()).pipe(
-      map((response) => {
-        this.extractData(response);
-      }),
+      map((response) => this.extractData(response)),
       catchError((error) => this.handleError(error))
     );
   }
 
   delete(endPoint: string): Observable<any> {
     return this.httpClient.delete(endPoint, this.createOptions()).pipe(
-      map((response) => {
-        this.extractData(response);
-      }),
+      map((response) => this.extractData(response)),
       catchError((error) => this.handleError(error))
     );
   }
 
   private extractData(response: any): any {
-
     const contentType: string = response.headers.get('content-type');
 
     if (contentType) {
@@ -171,5 +163,12 @@ export class HttpService {
       this.headers = this.headers.append(key, value); // This class is immutable
     }
     return this;
+  }
+
+  authBasic(usuario: string, password: string): HttpService {
+    return this.header(
+      'Authorization',
+      'Basic ' + btoa(usuario + ':' + password)
+    );
   }
 }

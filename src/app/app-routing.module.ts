@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './layouts/admin/admin.component';
+import { AuthComponent } from './layouts/auth/auth.component';
 import { JobApplicantModule } from './modules/job-applicant/job-applicant.module';
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path:'login',
+    component : AuthComponent
+  }
 ];
 
 @NgModule({

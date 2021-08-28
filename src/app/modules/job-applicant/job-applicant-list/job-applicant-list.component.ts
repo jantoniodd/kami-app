@@ -18,7 +18,7 @@ export class JobApplicantListComponent implements OnInit {
     'nombres',
   ];
 
-  constructor(private service: JobApplicantService) {}
+  constructor(private service: JobApplicantService) { }
 
   ngOnInit(): void {
     this.service.findAll().subscribe((x) => {
@@ -28,7 +28,5 @@ export class JobApplicantListComponent implements OnInit {
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
-
-    console.log(filterValue);
   }
 }

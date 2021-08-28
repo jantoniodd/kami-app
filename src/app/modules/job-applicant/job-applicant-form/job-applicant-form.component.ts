@@ -71,7 +71,6 @@ export class JobApplicantFormComponent {
 
       this.service.save(formulario).subscribe(
         p => {
-          console.log(p);
           this.notification.showNotification("Se creó el postulante", '');
         }
       );
@@ -87,9 +86,7 @@ export class JobApplicantFormComponent {
   }
 
   _keyUp(event: any) {
-    console.log(event);
 
-    //console.log(event.target.value);
     const pattern = /^[0-9]*$/;
     //let inputChar = String.fromCharCode(event.charCode)
     if (!pattern.test(event.target.value)) {

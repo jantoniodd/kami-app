@@ -1,0 +1,24 @@
+<div
+  class="content d-flex justify-content-center align-items-center"
+  style="height: 100%"
+>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <dd-input
+      type="text"
+      label="Usuario"
+      formControlName="usuario"
+      icono="person"
+      required="true"
+    ></dd-input>
+
+    <dd-input
+      type="password"
+      label="Password"
+      formControlName="password"
+      icono="lock"
+      required="true"
+    ></dd-input>
+
+    <button type="submit" mat-stroked-button>Ingresar</button>
+  </form>
+</div>
