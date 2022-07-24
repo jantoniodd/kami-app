@@ -1,5 +1,5 @@
 import { Component, forwardRef } from '@angular/core';
-import { ControlValueAccessor, FormBuilder, FormGroup, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
+import { ControlValueAccessor, UntypedFormBuilder, UntypedFormGroup, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { EMPTY, of } from 'rxjs';
 import { map, switchMap, tap } from 'rxjs/operators';
 import { JobApplicantService } from 'src/app/presentation/modules/job-applicant/job-applicant.service';
@@ -20,14 +20,14 @@ export class DdUbigeoComponent implements ControlValueAccessor {
 
   onTouched = () => { };
 
-  form: FormGroup;
+  form: UntypedFormGroup;
 
   departamentos = of([]);
   provincias = of([]);
   distritos = of([]);
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private service: JobApplicantService) {
 
     this.form = this.formBuilder.group({

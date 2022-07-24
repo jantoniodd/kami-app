@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { of } from 'rxjs';
 import { JobApplicantService } from '../job-applicant.service';
 
@@ -19,7 +19,7 @@ const moment = _moment;
 })
 export class JobApplicantFormComponent {
 
-  form: FormGroup = this.formBuilder.group(
+  form: UntypedFormGroup = this.formBuilder.group(
     {
       formOne: this.formBuilder.group(FORM_DATOS_PERSONALES),
       formTwo: this.formBuilder.group(FORM_DATOS_CONTACTO),
@@ -38,7 +38,7 @@ export class JobApplicantFormComponent {
 
   constructor(
     private abc: CualquierCosa,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private service: JobApplicantService,
     private notification: NotificadorService
   ) {

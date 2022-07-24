@@ -1,7 +1,7 @@
 import { Component, forwardRef, Input } from '@angular/core';
 import {
   ControlValueAccessor,
-  FormControl,
+  UntypedFormControl,
   NG_VALUE_ACCESSOR,
 } from '@angular/forms';
 import { Observable, of } from 'rxjs';
@@ -19,7 +19,7 @@ import { Observable, of } from 'rxjs';
   ],
 })
 export class DdSelectComponent implements ControlValueAccessor {
-  mySelect = new FormControl();
+  mySelect = new UntypedFormControl();
 
   @Input() disabled = false;
   @Input() label: string = '';
