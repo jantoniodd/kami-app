@@ -1,4 +1,5 @@
-import { Rol } from './Rol.model';
+import { Rol } from "./rol.model";
+
 
 export interface Usuario {
   token: string;
