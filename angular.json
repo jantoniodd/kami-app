@@ -94,19 +94,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "kami-app:build",
-            "proxyConfig":"proxy.conf.json"
+            "proxyConfig": "proxy.conf.json",
+            "buildTarget": "kami-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "kami-app:build:production"
+              "buildTarget": "kami-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "kami-app:build"
+            "buildTarget": "kami-app:build"
           }
         },
         "test": {

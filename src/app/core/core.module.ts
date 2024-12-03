@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { HttpService } from './http.service';
 import { AuthService } from './auth.service';
 import { TokenInterceptor } from './token.interceptor';
@@ -10,8 +10,5 @@ const providerInterceptor = {
   multi: true
 }
 
-@NgModule({
-  imports: [HttpClientModule],
-  providers: [HttpService, AuthService, providerInterceptor],
-})
+@NgModule({ imports: [], providers: [HttpService, AuthService, providerInterceptor, provideHttpClient(withInterceptorsFromDi())] })
 export class CoreModule { }

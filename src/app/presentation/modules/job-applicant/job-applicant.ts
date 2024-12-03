@@ -9,6 +9,6 @@ export interface JobApplicant {
     nombres: string;
     apePaterno: string;
     apeMaterno: string;
-    fcNacido: string;
+    fcNacimiento: string;
 
 }

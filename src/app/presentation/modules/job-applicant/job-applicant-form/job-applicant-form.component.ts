@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { of } from 'rxjs';
 import { JobApplicantService } from '../job-applicant.service';
 
+import { FormBuilder } from '@angular/forms';
 import * as _moment from 'moment';
+import { CualquierCosa } from 'src/app/data/services/cualquier-cosa';
+import { NotificadorService } from 'src/app/data/services/notificador.service';
 import {
   FORM_DATOS_CONTACTO,
   FORM_DATOS_EDUCACION,
   FORM_DATOS_PERSONALES,
 } from './job-applicant-form';
-import { CualquierCosa } from 'src/app/data/services/cualquier-cosa';
-import { NotificadorService } from 'src/app/data/services/notificador.service';
 const moment = _moment;
 
 @Component({
@@ -19,7 +19,7 @@ const moment = _moment;
 })
 export class JobApplicantFormComponent {
 
-  form: UntypedFormGroup = this.formBuilder.group(
+  form = this.formBuilder.group(
     {
       formOne: this.formBuilder.group(FORM_DATOS_PERSONALES),
       formTwo: this.formBuilder.group(FORM_DATOS_CONTACTO),
@@ -38,7 +38,7 @@ export class JobApplicantFormComponent {
 
   constructor(
     private abc: CualquierCosa,
-    private formBuilder: UntypedFormBuilder,
+    private formBuilder: FormBuilder,
     private service: JobApplicantService,
     private notification: NotificadorService
   ) {
@@ -91,13 +91,13 @@ export class JobApplicantFormComponent {
     //let inputChar = String.fromCharCode(event.charCode)
     if (!pattern.test(event.target.value)) {
       event.target.value = event.target.value.replace(/[^0-9]/g, "");
-      
+
       this.form.get("formOne").get("numero").setValue(event.target.value.replace(/[^0-9]/g, ""));
 
       // invalid character, prevent input
     }
 
-    
+
   }
 
 

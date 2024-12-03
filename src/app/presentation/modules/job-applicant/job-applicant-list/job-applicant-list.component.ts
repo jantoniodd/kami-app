@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 import { JobApplicantService } from '../job-applicant.service';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'km-job-applicant-list',
