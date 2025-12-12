@@ -3,6 +3,7 @@ import { MAT_SNACK_BAR_DATA, MatSnackBarRef } from '@angular/material/snack-bar'
 
 
 @Component({
+  standalone: false,
   template: `
     <div></div>
     <div>{{ data.message }}</div>

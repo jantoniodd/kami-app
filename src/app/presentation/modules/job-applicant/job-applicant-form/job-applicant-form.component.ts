@@ -14,6 +14,7 @@ import {
 const moment = _moment;
 
 @Component({
+  standalone: false,
   templateUrl: './job-applicant-form.component.html',
   styleUrls: ['./job-applicant-form.component.scss'],
 })

@@ -3,6 +3,7 @@ import { JobApplicantService } from '../job-applicant.service';
 import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
+  standalone: false,
   selector: 'km-job-applicant-list',
   templateUrl: './job-applicant-list.component.html',
   styleUrls: ['./job-applicant-list.component.scss'],

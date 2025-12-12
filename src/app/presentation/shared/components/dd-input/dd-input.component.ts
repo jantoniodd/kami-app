@@ -2,6 +2,7 @@ import { Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
+  standalone: false,
   selector: 'dd-input',
   templateUrl: './dd-input.component.html',
   styleUrls: ['./dd-input.component.scss'],

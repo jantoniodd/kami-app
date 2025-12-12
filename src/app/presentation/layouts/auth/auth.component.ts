@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/auth.service';
 
 @Component({
+  standalone: false,
   selector: 'km-auth',
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss'],
