@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CualquierCosa } from '../../../data/services/cualquier-cosa';
 
 @Component({
+  standalone: false,
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss'],
 })

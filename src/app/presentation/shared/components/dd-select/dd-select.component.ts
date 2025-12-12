@@ -7,6 +7,7 @@ import {
 import { Observable, of } from 'rxjs';
 
 @Component({
+  standalone: false,
   selector: 'dd-select',
   templateUrl: './dd-select.component.html',
   styleUrls: ['./dd-select.component.scss'],

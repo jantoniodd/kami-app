@@ -5,6 +5,7 @@ import { map, switchMap, tap } from 'rxjs/operators';
 import { JobApplicantService } from 'src/app/presentation/modules/job-applicant/job-applicant.service';
 
 @Component({
+  standalone: false,
   selector: 'dd-ubigeo',
   templateUrl: './dd-ubigeo.component.html',
   styles: [],
