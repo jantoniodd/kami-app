@@ -2,8 +2,10 @@
   <mat-label style="font-size: .75rem;">{{ label }}</mat-label>
   <input style="font-size: .70rem;" matInput [type]="type" [(ngModel)]="value" [required]="required" />
 
-  <div matPrefix *ngIf="icono" style="padding-right: 0.65rem;">
-    <mat-icon> {{icono}} </mat-icon>
-  </div>
+  @if (icono) {
+    <div matPrefix style="padding-right: 0.65rem;">
+      <mat-icon> {{icono}} </mat-icon>
+    </div>
+  }
 
 </mat-form-field>
